@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danao City Chronicles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Merriweather', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              danao: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                900: '#0c4a6e',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for a polished look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-800 antialiased font-sans">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-5">
+      <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+        <div class="flex items-center gap-2 z-50 relative">
+          <div class="w-8 h-8 bg-danao-600 rounded-lg flex items-center justify-center text-white font-bold font-serif">
+            D
+          </div>
+          <h1 id="brand-text" class="font-serif font-bold text-xl tracking-wide text-white transition-colors duration-300">
+            DANAO<span class="text-danao-500">.EXPLORE</span>
+          </h1>
+        </div>
+        
+        <!-- Navigation removed as requested -->
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative h-[60vh] md:h-[70vh] w-full overflow-hidden flex items-center justify-center">
+      <div class="absolute inset-0">
+        <img src="https://danaocity.gov.ph/wp-content/uploads/2024/04/sidlak-danao.png" alt="Danao City Scenery" class="w-full h-full object-cover"/>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-gray-50"></div>
+      </div>
+      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+        <span class="inline-block py-1 px-3 rounded-full bg-danao-500/20 border border-danao-400 text-danao-100 text-xs font-semibold tracking-widest uppercase mb-4 backdrop-blur-sm">
+          Cebu, Philippines
+        </span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-black text-white mb-6 leading-tight drop-shadow-lg">
+          Discover Danao City
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto mb-8 leading-relaxed">
+          Where industrial heritage meets eco-adventure. Experience the vibrant spirit of the Karansa Festival and the serenity of nature.
+        </p>
+        <button onclick="document.getElementById('blog-container').scrollIntoView({ behavior: 'smooth' })" class="px-8 py-3 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer">
+          Read the Story
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="blog-container" class="flex-grow container mx-auto px-4 py-12 relative -mt-10 md:-mt-20 z-20">
+      <div class="bg-white rounded-xl shadow-xl p-8 md:p-12 lg:p-16 max-w-4xl mx-auto min-h-[400px]">
+        
+        <!-- Blog Output (Static HTML) -->
+        <div id="content-area" class="min-h-[200px]">
+           <div class="prose prose-lg prose-slate max-w-none font-serif leading-relaxed text-gray-700">
+             
+             <h1 class="text-4xl font-bold text-danao-900 mt-8 mb-6 tracking-tight">The Complete Guide to Danao City: Heritage, Highlands, and Hospitality</h1>
+             
+             <p class="mb-4">Welcome to Danao City, the vibrant "Industrial Hub of Northern Cebu". But beyond its factories and bustling economy lies a city rich in history, breathtaking natural landscapes, and a warm, welcoming culture encapsulated in its slogan: <strong>"Live, Love, Danao"</strong>.</p>
+             
+             <p class="mb-4">Named after the Cebuano word for "small lake" or "lagoon" due to the geographic formation of its interior, Danao has evolved from a quiet fishing village into a first-class component city that perfectly balances heritage with progress.</p>
+
+             <h2 id="history" class="text-2xl font-bold text-danao-600 mt-10 mb-4 border-b pb-2 border-danao-100 scroll-mt-24">A Complete History: From Revolution to Industry</h2>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Origins & The Spanish Era</h3>
+             <p class="mb-4">Danao's recorded history begins deep in the Spanish colonial period. In 1744, it was established as a parish dedicated to Santo Tomas de Villanueva. The early settlement was centered around the church and the coastal areas, growing steadily under the influence of the friars and local principales.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">The Revolution & Local Heroes</h3>
+             <p class="mb-4">When the cry for freedom rang across the archipelago, Danawanons did not stand idly by. The local resistance against Spanish rule was fierce, led by brave figures like <strong>Capitan Tan Francisco "Iskong" Batucan</strong>. These local heroes organized the Katipunan chapter in Danao, engaging in skirmishes that eventually contributed to the surrender of Spanish forces in Cebu.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">World War II & The Resistance</h3>
+             <p class="mb-4">During the Japanese occupation in World War II, Danao became a hotbed of guerrilla activity. The rugged mountains provided sanctuary for resistance fighters who harassed enemy supply lines. It was during this time that the local ingenuity for metalworking began to shine—skills that would later define a unique industry.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">The Industrial Era & Durano Legacy</h3>
+             <p class="mb-4">Post-war Danao saw a massive transformation, largely driven by the vision of <strong>Ramon Durano Sr.</strong> ("Manong Amon"). He spearheaded the industrialization of the town, establishing the Durano Sugar Mill and the Universal Cement Company. His efforts were instrumental in Danao becoming a chartered city on June 7, 1961. This era laid the foundation for the city's economic resilience.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">The Gunsmithing Capital</h3>
+             <p class="mb-4">Perhaps the most unique chapter in Danao's history is its gunmaking industry. Born from the necessity of self-defense during WWII, local blacksmiths mastered the art of replicating firearms (locally known as "paltik"). Over the decades, this underground trade evolved. Recognizing the skill and potential, the government helped organize these craftsmen into a legal entity—the <strong>World's First Legal Gunmaking Cooperative</strong>. Today, Danao-made firearms are respected for their craftsmanship and quality.</p>
+
+             <h2 id="adventure" class="text-2xl font-bold text-danao-600 mt-10 mb-4 border-b pb-2 border-danao-100 scroll-mt-24">Adventures in Nature</h2>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Danasan Eco Adventure Park</h3>
+             <p class="mb-4">For thrill-seekers, the Danasan Eco Adventure Park is a must-visit. Nestled in the highlands, it offers adrenaline-pumping activities like "The Drop", the Skydrop, wakeboarding, and rugged ATV trails that take you through rivers and muddy terrain. It's a playground for the adventurous soul.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Mount Manghilao</h3>
+             <p class="mb-4">For a more serene adventure, a trek up Mount Manghilao offers a spiritual and scenic reward. Standing as the highest peak in the city, it provides a breathtaking 360-degree view of Danao, the Camotes Sea, and the neighboring islands. A large cross at the summit marks it as a place of pilgrimage during Holy Week.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Golf & Leisure</h3>
+             <p class="mb-4">If relaxation is your goal, tee off at the <strong>Club Filipino Inc. de Cebu</strong>, an 18-hole golf course set against rolling hills. Afterwards, unwind at the <strong>Danao City Boardwalk (Sands Gateway)</strong>, where you can enjoy the sea breeze and a stunning sunset view.</p>
+
+             <h2 id="culture" class="text-2xl font-bold text-danao-600 mt-10 mb-4 border-b pb-2 border-danao-100 scroll-mt-24">Culture & Heritage</h2>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">The Karansa Festival</h3>
+             <p class="mb-4">Celebrated every September, the <strong>Karansa Festival</strong> is the heartbeat of Danao's culture. The festival honors the patron saint, Santo Tomas de Villanueva, and celebrates the city's pottery heritage. The dance steps—<em>kiay, karag, kurug</em>—mimic the movements of making pottery: kneading the clay, shaping the jar, and feeling the rhythm of the work.</p>
+
+             <blockquote class="border-l-4 border-danao-500 pl-4 italic text-gray-600 my-6 bg-danao-50 py-3 rounded-r shadow-sm">
+                 "Karansa is an expression of joy and thanksgiving, portrayed through the rhythmic movements of pottery making."
+             </blockquote>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Santo Tomas de Villanueva Church</h3>
+             <p class="mb-4">One of the oldest structures in the city, this church stands as a testament to the enduring faith of the Danawanons. Its architectural style reflects the Spanish influence, having withstood wars and natural calamities over the centuries.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Traditional Pottery</h3>
+             <p class="mb-4">In Barangay Suba, the tradition of pottery making remains alive. Skilled artisans still use traditional methods to create earthen jars and pots, a livelihood that inspired the city's famous festival.</p>
+
+             <h2 id="food" class="text-2xl font-bold text-danao-600 mt-10 mb-4 border-b pb-2 border-danao-100 scroll-mt-24">A Gastronomic Journey</h2>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Kiseo (Queseo)</h3>
+             <p class="mb-4">No trip to Danao is complete without tasting <strong>Kiseo</strong>, the local white cheese made from carabao's milk. It has a slightly salty, creamy, and tart flavor profile that pairs perfectly with hot <em>pan de sal</em> (bread rolls) in the morning.</p>
+
+             <h3 class="text-xl font-bold text-danao-900 mt-6 mb-2">Tinap-anan</h3>
+             <p class="mb-4">Another local delicacy is <strong>Tinap-anan</strong>, or smoked fish. The smoking process preserves the fish and gives it a distinct savory flavor that is best enjoyed with vinegar and chili.</p>
+
+             <p class="mb-4 mt-8 font-bold">Danao City is more than just a waypoint; it is a destination. Whether you are a history buff, an adrenaline junkie, or a food lover, Danao welcomes you with open arms.</p>
+           </div>
+        </div>
+        
+        <!-- Gallery -->
+        <div class="mt-16 pt-8 border-t border-gray-100">
+          <div class="mb-6">
+            <h3 class="text-lg font-bold text-gray-900">Gallery</h3>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
+             <!-- History -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="history">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/1b/43/d1/photo0jpg.jpg?w=1200&h=1200&s=1" alt="Santo Tomas de Villanueva Church" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Santo Tomas Church</span>
+                </div>
+             </div>
+             
+             <!-- Adventure -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="adventure">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/65/f4/24/lots-of-things-to-do.jpg?w=1200&h=900&s=1" alt="Danasan Eco Adventure Park" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Danasan Eco Park</span>
+                </div>
+             </div>
+
+             <!-- Culture -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="culture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQZl2KSN0ehQrqONU2iPr67zq8XmMKcUrhbQ&s" alt="Karansa Festival" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Karansa Festival</span>
+                </div>
+             </div>
+
+             <!-- Food -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="food">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpo996VZsLp90EiJjmUN1NO9-LWuL98WrT8w&s" alt="Kiseo White Cheese" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Kiseo (White Cheese)</span>
+                </div>
+             </div>
+
+             <!-- More Adventure -->
+              <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="adventure">
+                <img src="https://bisayatraveler.com/wp-content/uploads/2017/10/00234.jpg" alt="Mt. Manghilao" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Mt. Manghilao</span>
+                </div>
+             </div>
+
+              <!-- More Culture -->
+              <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="culture">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgG-jeRl6ol51rmyFJIsBWIEdkp5CC9g5VluW4FwvhXt-lDBa432_kWEVSWSlcMNkBR7q_86R0UcBnmzBqRBRZ-RHwlQPhZqDdTHyiKLE0jnQiEjSyRo6lIcoPkNZ6_XdzX7ewqYZzHYtxO/s1600/13580652_144577689297691_2748349407920516330_o.jpg" alt="Traditional Pottery" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Traditional Pottery</span>
+                </div>
+             </div>
+
+             <!-- Food: Tinap-anan -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="food">
+                <img src="https://danaocityblog.wordpress.com/wp-content/uploads/2017/10/photo0204.jpg" alt="Tinap-anan Smoked Fish" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Tinap-anan (Smoked Fish)</span>
+                </div>
+             </div>
+             
+             <!-- Adventure: Boardwalk -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="adventure">
+                <img src="https://danaocity.gov.ph/wp-content/uploads/2024/04/boardwalk.jpg" alt="Danao Boardwalk" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Danao Boardwalk</span>
+                </div>
+             </div>
+
+              <!-- Adventure: Golf -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="adventure">
+                <img src="https://www.golfph.com/wp-content/uploads/2015/03/club-filipino-inc-de-cebu1.jpg" alt="Club Filipino Golf Course" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Club Filipino Golf Course</span>
+                </div>
+             </div>
+
+             <!-- History: Plaza/City Hall -->
+             <div class="gallery-item group relative overflow-hidden rounded-lg h-48 cursor-pointer shadow-md" data-category="history">
+                <img src="https://live.staticflickr.com/82/241246854_8c8ea9cb4a_c.jpg" alt="Danao City Hall Plaza" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2 text-center">
+                    <span class="text-white text-sm font-bold drop-shadow-md">Danao City Plaza</span>
+                </div>
+             </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12 mt-12">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-500 font-serif italic text-lg mb-6">"Live, Love, Danao"</p>
+        <div class="flex justify-center gap-6 mb-8">
+          <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-danao-100 hover:text-danao-600 transition-colors cursor-pointer">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </span>
+           <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-danao-100 hover:text-danao-600 transition-colors cursor-pointer">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          </span>
+        </div>
+        <p class="text-gray-400 text-sm">© <span id="year"></span> Danao City Chronicles. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
